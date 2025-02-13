@@ -46,7 +46,7 @@ def generate_chat(messages, name, time, profpic_file):
     time_position = (NAME_POSITION[0] + name_font.getlength(name) + NAME_TIME_SPACING, TIME_POSITION_Y)
     # Open proile picture
     prof_pic = Image.open(profpic_file)
-    prof_pic.thumbnail([sys.maxsize, PROFPIC_WIDTH], Image.ANTIALIAS)
+    prof_pic.thumbnail([sys.maxsize, PROFPIC_WIDTH], Image.LANCZOS)
     # Create profile picture mask
     mask = Image.new("L", prof_pic.size, 0)
     draw = ImageDraw.Draw(mask)
